@@ -5,13 +5,13 @@ let ArticleSchema = new mongoose.Schema(
 		text: String,
 		title: String,
 		description: String,
-		feature_img: String, 
+		feature_img: String,
 		claps: Number,
 		author: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'User'
 		},
-		
+
 		comments: [
 			{
 				author: {
@@ -42,7 +42,7 @@ ArticleSchema.methods.addAuthor = function(author_id){
 	return this.save()
 }
 
-ArticleShema.methods.getUserArticle = function(_id) {
+ArticleSchema.methods.getUserArticle = function(_id) {
 	Article.find({'author': _id}).then((article) => {
 		return article
 	})

@@ -6,7 +6,7 @@ let UserSchema = new mongoose.Schema(
 	email: String,
 	provider: String,
 	provider_id: String,
-	token: String, 
+	token: String,
 	provider_pic: String,
 	followers:[
 		{
@@ -34,6 +34,4 @@ UserSchema.methods.addFollower = function (fs) {
 	this.followers.push(fs)
 }
 
-module.exports = mongoose.model('User', userSchema)
-
-
+module.exports = mongoose.model('User', UserSchema)

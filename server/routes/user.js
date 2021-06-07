@@ -15,7 +15,7 @@ module.exports = (router) => {
     */
 
   router
-    .router('/user/profile/:id')
+    .route('/user/profile/:id')
     .get(usercontroller.getUserProfile)
 
     /**
@@ -23,12 +23,12 @@ module.exports = (router) => {
     */
   router
     .route('/user')
-    .post(userconroller.addUser)
+    .post(usercontroller.addUser)
 
   /**
   * follow a user
   */
   router
     .route('/user/follow')
-    .post(userconroller.followUser)
+    .post(usercontroller.followUser)
       }
